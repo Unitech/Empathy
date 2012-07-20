@@ -3,12 +3,15 @@
 
 var play = require('play');
 
-var tmp = play.sound(__dirname + '/two.mp3',function() {
-    // setTimeout(function() {
-    // 	play.setVolume(0);    
-    // }, 600);
+play.sound({
+    file :__dirname + '/two.mp3',
+    volume : 0,
+    soundcard : 'hw:0,0'
 });
 
+// setTimeout(function() {
+//     play.setVolume(0);
+// }, 500);
 
 play.increaseSlowly(function() {
     process.exit(1);
